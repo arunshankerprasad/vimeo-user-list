@@ -1,0 +1,10 @@
+<html>
+<head><title>Hello World!</title>
+<body>
+    <form action="{% url get_users %}" method="POST">
+        {% csrf_token %}
+        <p>Hello World. The current day and time is {{current_time|date:"DATETIME_FORMAT"}}. {{ users }}</p>
+        <button type="submit" value="0" name="sub">Get it</button>
+    </form>
+</body>
+</html>
