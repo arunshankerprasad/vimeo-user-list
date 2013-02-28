@@ -3,7 +3,32 @@
 <body>
     <form action="{% url get_users %}" method="POST">
         {% csrf_token %}
-        <p>Hello World. The current day and time is {{current_time|date:"DATETIME_FORMAT"}}. {{ users }}</p>
+        <input type="hidden" name="page" value="{{ page }}" />
+        <p>Hello World. The current day and time is {{current_time|date:"DATETIME_FORMAT"}}.</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>URL</th>
+                    <th>Is Paid User</th>
+                    <th>Has Atleast One Video In Staff Pick?</th>
+                    <th>Has Atleast On Video</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.name }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No records.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         <button type="submit" value="0" name="sub">Get it</button>
     </form>
 </body>
