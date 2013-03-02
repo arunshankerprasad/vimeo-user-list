@@ -1,6 +1,46 @@
-<html>
-<head><title>Hello World!</title>
-<body>
-    <p>Hello World. The current day and time is {{current_time|date:"DATETIME_FORMAT"}}.</p>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<section id="content">
+    <div class="subContent">
+        <h2>Search for an user</h2>
+        <form action="#" method="post" accept-charset="utf-8" id="search">
+            <div class="form">
+                <div class="row">
+                    {{ form.name.label }}
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                    <ul class="errors">
+                        {% for error in form.name.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    {{ form.flter.label }}
+                    {{ form.flter }}
+                </div>
+            </div>
+        </form>
+        <br><br>
+        <button id="search_button">Search</button>
+    </div>
+    <br><br>
+</section>
+<section id="users">
+    <h4>Total results: <span id="result"></span></h4>
+    <table class="list">
+        <tbody>
+        </tbody>
+    </table>
+</section>
+<script type="text/javascript">
+    $("input#id_name").focus();
+    $("#search_button").click(search)
+    $("#search").submit(search)
+    search();
+</script>
+{% endblock %}

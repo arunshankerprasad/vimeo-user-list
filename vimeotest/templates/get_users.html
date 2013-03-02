@@ -1,10 +1,12 @@
 <html>
-<head><title>Hello World!</title>
+<head><title>Get users from Vimeo</title>
 <body>
     <form action="{% url get_users %}" method="POST">
         {% csrf_token %}
-        <input type="hidden" name="page" value="{{ page }}" />
-        <p>Hello World. The current day and time is {{current_time|date:"DATETIME_FORMAT"}}.</p>
+        <input type="hidden" name="page_num" value="{{ page_num }}" />
+        <p>The current day and time is {{current_time|date:"DATETIME_FORMAT"}}.</p>
+        <h4>Total users till now: {{ total_num_users }}</h4>
+        <button type="submit" value="0" name="sub">Get it</button>
         <table>
             <tbody>
                 <tr>
@@ -16,13 +18,13 @@
                 </tr>
                 {% for user in users %}
                 <tr>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.name }}</td>
+                    <td><a href="{{ user.url }}">{{ user.name }}</a></td>
+                    <td><a href="{{ user.url }}">{{ user.url }}</a></td>
+                    <td>{{ user.is_paying_user }}</td>
+                    <td>{{ user.has_video_in_staff_pick }}</td>
+                    <td>{{ user.has_atleast_one_video }}</td>
                 </tr>
-                {% else %}
+                {% empty %}
                 <tr>
                     <td colspan="5">No records.</td>
                 </tr>

@@ -1,0 +1,455 @@
+/*-----------------------------------------------------------------*/
+/*                    Base styles                                  */
+/*-----------------------------------------------------------------*/
+
+/* Reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-family: 'Libre Baskerville', Arial, Helvetica, Verdana, sans-serif;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html, body {
+    height: 100%;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+/* Sections */
+body {
+    color: #444444;
+    font: 100%/1.5 Arial, Helvetica, Verdana, sans-serif; /* 12px */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0 auto;
+    background: #F4F7D9 no-repeat;
+    border-top: 0px solid #F4F7D9;
+    border-bottom: 0px solid #F4F7D9;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.0em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+/* Embedded content */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a:link {
+    color: #426384;
+    padding: 0px;
+    text-transform: none;
+}
+
+a:visited {
+    color: #426384;
+    text-transform: none;
+}
+
+a:hover {
+    color: #F88836;
+    text-transform: none;
+}
+
+a:active {
+    color: #426384;
+    text-transform: none;
+}
+
+/* Tabular data */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td, th {
+    text-align: left;
+}
+th {
+    color: #222222;
+}
+td {
+    vertical-align: top;
+}
+
+/* Input fields */
+
+textarea, button, input,select {
+    font: 88%/1.5 Arial, Helvetica, Verdana, sans-serif; /* 11px */
+}
+
+textarea {
+    padding: 0.2em;
+    border: 2px solid #DDDDDD;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input, select, button {
+    padding: 0.2em 0.2em 0 0.2em;
+    width: auto;
+    margin: 0;
+}
+
+input, select {
+    border: 1px solid;
+    border-color: #666666 #DFDFDF #DFDFDF #666666;
+    color: #333333;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+    background-color: #5EA092;
+    background-image: -webkit-gradient(linear,left top, left bottom, from(#5EA092), to(#1F6858));
+    background-image: -webkit-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -moz-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -ms-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -o-linear-gradient(top, #5EA092, #1F6858);
+    background-image: linear-gradient(top, #5EA092, #1F6858);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5EA092', EndColorStr='#1F6858');
+    border: 1px solid #537870;
+    color: white !important;
+
+    padding: 0.307692308em 0.615384615em 0.307692308em 0.615384615em; /* 4px */
+    margin-right: 0.390625em; /* 4.4px */
+    letter-spacing: 1px;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, button:hover {
+    border-color: #537870;
+    background-color: #1F6858;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1F6858), to(#5EA092));
+    background-image: -webkit-linear-gradient(top, #1F6858, #5EA092);
+    background-image: -moz-linear-gradient(top, #1F6858, #5EA092);
+    background-image: -ms-linear-gradient(top, #1F6858, #5EA092);
+    background-image: -o-linear-gradient(top, #1F6858, #5EA092);
+    background-image: linear-gradient(top, #1F6858, #5EA092);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1F6858', EndColorStr='#5EA092');
+}
+
+/* Other Elements */
+
+br {
+    clear: both;
+}
+
+/* Form elements */
+
+form input[type=text], form input[type=email], form input[type=url],
+form input[type=date], form input[type=password], form input[type=tel], form textarea, form select {
+    width: 99%;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    padding-bottom: 0.1875em;
+}
+
+form input[type=text]:focus, form input[type=email]:focus, form input[type=url]:focus,
+form input[type=date]:focus, form input[type=password]:focus, form input[type=tel]:focus, form textarea:focus, form select:focus {
+    border-color: #5EA092;
+    box-shadow: 0 0 5px #5EA092;
+}
+
+form div.form, form div.row , form div.row label{
+    float: left;
+    width: 100%;
+}
+
+form div.row {
+    width: auto;
+    padding-left: 0.55em;
+}
+
+form div.row label {
+    margin: 0.38em 0;
+}
+
+/*-----------------------------------------------------------------*/
+/*                    Layout styles                                */
+/*-----------------------------------------------------------------*/
+
+div.container {
+    height: 100%;
+}
+
+header, footer {
+    background: #333333 url('/static/img/debut_dark.png') repeat; /* right top*/
+    padding: 0.875em;
+}
+
+header {
+    /*op: 0;
+    float: left;*/
+    border-bottom: 1px solid #BBBBBB;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    position: fixed;
+    z-index: 8888;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    margin-left: 0.875em;
+}
+
+div[role="document"] {
+    /*background-color: #FFFFFF;
+    border: 1px solid #B0BDCC;
+    margin: 0.615384615em;
+    padding: 0.615384615em;*/
+    float: left;
+    width: 100%;
+    margin: 3.2em 0 0;
+    padding: 0;
+}
+
+div[role="banner"] {
+    background: #333333 url('/static/img/wood_1.png') repeat;
+    color: #F4F7D9;
+    font-weight: bold;
+    font-family: 'Redressed', cursive, Arial, Helvetica, Verdana, sans-serif;
+    padding: 0.615384615em 0.615384615em 0.615384615em 1em;
+}
+
+div[role="banner"] span {
+    float: left;
+    width: 100%;
+}
+
+div[role="main"] {
+    float: left;
+    width: 100%;
+}
+
+div[role="banner"] h1 {
+    font-size: 6em;
+    font-family: 'Redressed', cursive;
+}
+
+div[role="banner"] span {
+    color: #5EA092;
+    font-size: 1.4em;
+    font-family: 'Redressed', cursive, Arial, Helvetica, Verdana, sans-serif;
+}
+
+div[role="banner"] span a:link, div[role="banner"] span a:visited, div[role="banner"] span a:active {
+    color: #5EA092;
+	text-decoration: none;
+}
+
+div[role="banner"] span a:hover {
+    color: #1F6858;
+	text-decoration: none;
+}
+
+div.subContent {
+    padding: 0 1em;
+    float: left;
+}
+
+ul.errors  {
+    font-size: 10px;
+    color: red;
+    padding: 0px;
+    margin: 4px 0px;
+    list-style: none;
+    list-style-position: outside;
+    list-style-type: none;
+    width: auto;
+    font-weight: normal !important;
+}
+
+ul.errors li {
+    width: auto;
+}
+
+table.list {
+	border: 1px solid #537870;
+	border-collapse: collapse;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	width: 98%;
+	table-layout: fixed;
+	font-size: 0.8em;
+}
+
+table.list th {background-color: #5EA092;
+    background-image: -webkit-gradient(linear,left top, left bottom, from(#5EA092), to(#1F6858));
+    background-image: -webkit-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -moz-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -ms-linear-gradient(top, #5EA092, #1F6858);
+    background-image: -o-linear-gradient(top, #5EA092, #1F6858);
+    background-image: linear-gradient(top, #5EA092, #1F6858);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5EA092', EndColorStr='#1F6858');
+    color: white !important;
+	border-left: 1px solid #537870;
+	vertical-align: middle;
+	color: #000000;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+table.list td {
+	border: 1px solid #537870;
+	border-collapse: collapse;
+}
+
+/*-----------------------------------------------------------------*/
+/*                    Custom element styles                        */
+/*-----------------------------------------------------------------*/
+
+/* Common re-usable styles */
+
+.maxWdth320Px {
+    max-width: 320px;
+}
+
+.alignCenter {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.smallFont {
+    font-size: 80%;
+}
+
+div.content section {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+/* event */
+
+section#banner, section#about, section#register {
+    min-height: 100%;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+section#register {
+    margin-bottom: 1.5em;
+}
+
+section#register form {
+    margin: 0 1em 0 0;
+}
+
+section#register form div.form {
+    max-width: 480px;
+}
+
+section#register div.registrationNotice p {
+    float: left;
+    margin: 0.5em 0 0 1.5em;
+}
+
+div.registrationSuccess {
+    float: left;
+    font-size: 1.2em;
+    margin: 3em 0;
+    text-align: center;
+    width: 100%;
+}
+
+div.registrationSuccess span.thanks {
+    font-size: 1.4em;
+    color: #1F6858;
+}
+
+div.description {
+    margin: 1em 0 1.5em 0;
+    float: left;
+}
+
+div.description div {
+    float: left;
+}
+
+div.description div.gplusBadge {
+    float: right;
+}
+
+/* agenda */
+
+div.agenda, div.agenda div.item, span.topic, span.speaker, span.duration, span.description {
+    width: 100%;
+    float: left;
+}
+
+span.speaker {
+    color: #1F6858;
+}
+
+span.speaker a:link, span.speaker a:visited, span.speaker a:active {
+    color: #1F6858;
+	text-decoration: none;
+}
+
+span.speaker a:hover {
+    color: #5EA092;
+	text-decoration: none;
+}
+
+div.agenda div.item {
+    border-bottom: 0.125em dotted #C0C1AE;
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+div.agenda div.last {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* participants */
+
+table.list td.email, table.list th.email {
+    width: 15%;
+}
