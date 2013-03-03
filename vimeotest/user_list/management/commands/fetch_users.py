@@ -9,7 +9,7 @@ class Command(NoArgsCommand):
     help = "Fetch users from Vimeo"
 
     def handle_noargs(self, **options):
-        pn = 205
+        pn = 1
         total_count = User.objects.all().count()
         while total_count <= 5010:
             pn += 1
