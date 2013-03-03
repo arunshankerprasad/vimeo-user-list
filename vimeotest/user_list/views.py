@@ -61,3 +61,4 @@ def search(request):
         r.update(form.errors)
 
     return HttpResponse(dumps(r), mimetype='application/json')
+
