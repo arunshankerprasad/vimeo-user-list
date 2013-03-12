@@ -11,3 +11,10 @@ class User(models.Model):
 
     class Meta:
         unique_together = ("name", "url")
+
+    def __unicode__(self):
+        return u"""Name: {u.name}\n
+        URL: {u.url}\n
+        is_paying_user: {u.is_paying_user}\n
+        has_video_in_staff_pick: {u.has_video_in_staff_pick}\n
+        has_atleast_one_video: {u.has_atleast_one_video}""".format(u=self)
