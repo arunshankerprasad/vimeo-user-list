@@ -1,2 +1,2 @@
 #!/bin/sh
-mkdir -p /home/dotcloud/data/media /home/dotcloud/volatile/static
+mkdir -p /home/dotcloud/data/media /home/dotcloud/volatile/static /home/dotcloud/data/media/uploads

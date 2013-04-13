@@ -4,7 +4,7 @@ from django.template import Context, loader
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
-from models import User
+from models import User, UserFile
 from forms import SearchForm
 
 ## http://stackoverflow.com/questions/2249792/json-serializing-django-models-with-simplejson
@@ -61,4 +61,24 @@ def search(request):
         r.update(form.errors)
 
     return HttpResponse(dumps(r), mimetype='application/json')
+
+
+@csrf_exempt
+def upload(request):
+    """ Upload View """
+
+    t = loader.get_template('upload.html')
+    c = Context({
+        'files': UserFile.objects.all()
+    })
+    if request.POST:
+        uf = UserFile(user_file=request.FILES['userfile'], absolute_path=request.POST.get('absolute_path', ''),
+            content_type=request.FILES['userfile'].content_type)
+        uf.save()
+        if not uf.id:
+            raise Exception('Not saved!')
+        return HttpResponse(dumps({'name': uf.user_file.name, 'url': uf.user_file.url}), mimetype='application/json')
+
+    return HttpResponse(t.render(c))
+
 

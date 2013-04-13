@@ -18,3 +18,10 @@ class User(models.Model):
         is_paying_user: {u.is_paying_user}\n
         has_video_in_staff_pick: {u.has_video_in_staff_pick}\n
         has_atleast_one_video: {u.has_atleast_one_video}""".format(u=self)
+
+
+class UserFile(models.Model):
+    user_file = models.FileField(upload_to='uploads/%Y/%m/%d')
+    absolute_path = models.CharField(max_length=400)
+    content_type = models.CharField(max_length=400)
+

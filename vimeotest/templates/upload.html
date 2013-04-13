@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<section id="content">
+    <div class="subContent">
+        <ul id="uploaded">
+            {% for file in files %}
+            <li><a href="{{ file.user_file.url }}">{% if file.absolute_path %}{{ file.absolute_path }}{% else %}{{ file.user_file.name }}{% endif %}</a></li>
+            {% endfor %}
+        </ul>
+        <br><br>
+        <h2>Upload file using HTML5 (drop files below)</h2>
+        <form action="#" method="post" accept-charset="utf-8" id="search">
+            <div id="dropzone">
+            Drag and drop files here.
+            </div>
+        </form>
+        <br><br>
+        <h2>Upload file using Java Applet</h2>
+        <applet
+        alt = "Upload file"
+        code = 'asp.labs.FileUploadApplet'
+        archive = '/static/fileupload.jar',
+        width = 300,
+        height = 100 />
+    </div>
+    <br><br>
+</section>
+<script type="text/javascript">
+    $(function () {
+        $('#dropzone').filedrop({
+            url: '/upload',
+            paramname: 'userfile',
+            maxFiles: 5,
+            dragOver: function () {
+                $('#dropzone').css('background', 'blue');
+            },
+            dragLeave: function () {
+                $('#dropzone').css('background', 'gray');
+                $('#dropzone').html('Drag and drop files here.');
+            },
+            drop: function () {
+                $('#dropzone').css('background', 'gray');
+                $('#dropzone').html('Drag and drop files here.');
+            },
+            afterAll: function () {
+                $('#dropzone').html('The file(s) have been uploaded successfully!');
+            },
+            uploadFinished: function (i, file, response, time) {
+                $('#uploaded').append('<li><a href="' + response.url + '">' + response.name + '</a></li>');
+            }
+        });
+    });
+</script>
+
+{% endblock %}
